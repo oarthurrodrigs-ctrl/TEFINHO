@@ -178,7 +178,6 @@
             50% { transform: scale(1.2); }
         }
 
-        /* Modal para ampliar fotos */
         .modal {
             display: none;
             position: fixed;
@@ -240,7 +239,7 @@
 
     <div class="container">
         <div class="intro">
-            <h2>✨ 5 Anos de Amor ✨</h2>
+            <h2>✨ 7 Anos de Amor ✨</h2>
             <p>
                 Esta é a nossa jornada juntos. Cada foto conta uma parte da nossa história,
                 repleta de amor, cumplicidade, sorrisos e momentos inesquecíveis.
@@ -248,8 +247,102 @@
             </p>
         </div>
 
-        <div class="gallery" id="gallery">
-            <!-- As fotos serão carregadas aqui pelo JavaScript -->
+        <div class="gallery">
+            <div class="photo-card" onclick="openModal('fotos/01.jpeg')">
+                <img src="fotos/01.jpeg" alt="Nosso Primeiro Momento">
+                <div class="caption">
+                    <h3>Nosso Primeiro Momento</h3>
+                    <p>Onde tudo começou ❤️</p>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('fotos/02.jpeg')">
+                <img src="fotos/02.jpeg" alt="Sorrisos">
+                <div class="caption">
+                    <h3>Sorrisos que Encantam</h3>
+                    <p>Sua alegria é contagiante 😊</p>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('fotos/03.png')">
+                <img src="fotos/03.png" alt="Declaração">
+                <div class="caption">
+                    <h3>Declaração Especial</h3>
+                    <p>Palavras que marcaram nosso amor 💌</p>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('fotos/04.jpeg')">
+                <img src="fotos/04.jpeg" alt="Praia">
+                <div class="caption">
+                    <h3>Praia e Amor</h3>
+                    <p>Sol, mar e você ao meu lado 🌊</p>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('fotos/05.jpeg')">
+                <img src="fotos/05.jpeg" alt="Noite">
+                <div class="caption">
+                    <h3>Noite Inesquecível</h3>
+                    <p>Vista linda, mas você é mais 🌃</p>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('fotos/06.jpeg')">
+                <img src="fotos/06.jpeg" alt="Felicidade">
+                <div class="caption">
+                    <h3>Momentos Felizes</h3>
+                    <p>Cada segundo é especial com você 🎉</p>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('fotos/07.jpeg')">
+                <img src="fotos/07.jpeg" alt="All You Need">
+                <div class="caption">
+                    <h3>All You Need is Love</h3>
+                    <p>E eu só preciso de você 💕</p>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('fotos/08.jpeg')">
+                <img src="fotos/08.jpeg" alt="Aniversário">
+                <div class="caption">
+                    <h3>Nosso Aniversário</h3>
+                    <p>Celebrando nosso amor 🎂</p>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('fotos/09.jpeg')">
+                <img src="fotos/09.jpeg" alt="Túnel">
+                <div class="caption">
+                    <h3>Túnel do Amor</h3>
+                    <p>Atravessando a vida juntos 💫</p>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('fotos/10.jpeg')">
+                <img src="fotos/10.jpeg" alt="Bem Casados">
+                <div class="caption">
+                    <h3>Bem Casados</h3>
+                    <p>Nosso futuro começa aqui 💍</p>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('fotos/11.jpeg')">
+                <img src="fotos/11.jpeg" alt="Beijo">
+                <div class="caption">
+                    <h3>Beijo Apaixonado</h3>
+                    <p>Seu beijo é meu vício 💋</p>
+                </div>
+            </div>
+
+            <div class="photo-card" onclick="openModal('fotos/12.jpeg')">
+                <img src="fotos/12.jpeg" alt="Felicidade">
+                <div class="caption">
+                    <h3>Pura Felicidade</h3>
+                    <p>Você é minha felicidade 😍</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -259,71 +352,28 @@
         <p style="margin-top: 20px; opacity: 0.7;">© 2024 - Stéfano & Amanda</p>
     </footer>
 
-    <!-- Modal para ampliar fotos -->
     <div class="modal" id="modal">
         <span class="close" onclick="closeModal()">&times;</span>
         <img id="modal-img" src="" alt="Foto ampliada">
     </div>
 
     <script>
-        // Lista de fotos e legendas
-        const photos = [
-            { src: '01.jpeg', title: 'Nosso Primeiro Momento', desc: 'Onde tudo começou ❤️' },
-            { src: '02.jpeg', title: 'Sorrisos que Encantam', desc: 'Sua alegria é contagiante 😊' },
-            { src: '03.png', title: 'Declaração Especial', desc: 'Palavras que marcaram nosso amor 💌' },
-            { src: '04.jpeg', title: 'Praia e Amor', desc: 'Sol, mar e você ao meu lado 🌊' },
-            { src: '05.jpeg', title: 'Noite Inesquecível', desc: 'Vista linda, mas você é mais 🌃' },
-            { src: '06.jpeg', title: 'Momentos Felizes', desc: 'Cada segundo é especial com você 🎉' },
-            { src: '07.jpeg', title: 'All You Need is Love', desc: 'E eu só preciso de você 💕' },
-            { src: '08.jpeg', title: 'Nosso Aniversário', desc: 'Celebrando nosso amor 🎂' },
-            { src: '09.jpeg', title: 'Túnel do Amor', desc: 'Atravessando a vida juntos 💫' },
-            { src: '10.jpeg', title: 'Bem Casados', desc: 'Nosso futuro começa aqui 💍' },
-            { src: '11.jpeg', title: 'Beijo Apaixonado', desc: 'Seu beijo é meu vício 💋' },
-            { src: '12.jpeg', title: 'Pura Felicidade', desc: 'Você é minha felicidade 😍' }
-        ];
-
-        // Carregar fotos dinamicamente
-        const gallery = document.getElementById('gallery');
-        const modal = document.getElementById('modal');
-        const modalImg = document.getElementById('modal-img');
-
-        photos.forEach((photo, index) => {
-            const card = document.createElement('div');
-            card.className = 'photo-card';
-            card.style.animationDelay = `${index * 0.1}s`;
-            
-            card.innerHTML = `
-                <img src="https://raw.githubusercontent.com/oarthurrodrigs-ctrl/TEFINHO/main/fotos/${photo.src}" 
-                     alt="${photo.title}" 
-                     onerror="this.onerror=null; this.src='https://via.placeholder.com/400x350?text=Foto+${index + 1}';">
-                <div class="caption">
-                    <h3>${photo.title}</h3>
-                    <p>${photo.desc}</p>
-                </div>
-            `;
-
-            card.onclick = () => openModal(`https://raw.githubusercontent.com/oarthurrodrigs-ctrl/TEFINHO/main/fotos/${photo.src}`);
-            gallery.appendChild(card);
-        });
-
         function openModal(src) {
-            modal.classList.add('active');
-            modalImg.src = src;
+            document.getElementById('modal').classList.add('active');
+            document.getElementById('modal-img').src = src;
         }
 
         function closeModal() {
-            modal.classList.remove('active');
+            document.getElementById('modal').classList.remove('active');
         }
 
-        // Fechar modal ao clicar fora da imagem
-        modal.onclick = (e) => {
-            if (e.target === modal) {
+        document.getElementById('modal').onclick = function(e) {
+            if (e.target === this) {
                 closeModal();
             }
         };
 
-        // Fechar modal com tecla ESC
-        document.addEventListener('keydown', (e) => {
+        document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeModal();
             }
